@@ -3,4 +3,4 @@ layout: page
 title: About
 ---
 
-Something about me.
+Stay at home, free minds, time slows, love remains.

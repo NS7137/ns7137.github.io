@@ -1,4 +1,3 @@
-theme: jekyll-theme-minimal
 title: Welcome to the nsr's homepage!
 description: Nothing to do, but just do it.
 author:
@@ -27,3 +26,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-relative-links
+
+ower: NS7137
+year: 2021
