@@ -1,14 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>Pinkingrey</title>
-	</head>
-	<body>
-		<h1 style="color: skyblue;">Hello GitHub Page!</h1>
-		<div>
-			<h2 style="color: cornflowerblue;">Some Web Study</h2>
-			<div><a href="./_posts/2021-10-31-lecture1.html" style="color: orchid;">lecture1:About HTML/CSS</a></div>
-		</div>
-	</body>
-</html>
+---
+layout: default
+---
+
+<ul>
+    {% for post in paginator.posts %}
+      <li>
+          <h2><a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">{{ post.title }}</a></h2>
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time>
+          <p>{{ post.content | strip_html | truncatewords:50 }}</p>
+      </li>
+    {% endfor %}
+</ul>
