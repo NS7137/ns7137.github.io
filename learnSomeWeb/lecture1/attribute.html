@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Hello!</title>
+<!-- 
+[attr] 有此属性的元素
+[attr = xxx] 属性等于xxx的元素
+[attr ~= xxx] 属性包含xxx的元素
+[attr |= xxx] 属性以xxx开头的元素	
+ -->
+		<style type="text/css">
+			a {
+				color: blue;
+			}
+			[href="https://bing.com"]{
+				color: orange;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li><a href="https://baidu.com">Baidu</a></li>
+			<li><a href="https://bing.com">Bing</a></li>
+			<li><a href="https://douban.com">Douban</a></li>
+		</ul>
+	</body>
+</html>

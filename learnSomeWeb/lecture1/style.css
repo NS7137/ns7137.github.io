@@ -1,0 +1,24 @@
+/*优先级
+1 inline
+2 id
+3 class
+4 type
+*/
+
+h1{
+	color: skyblue;
+	text-align: center;
+}
+.a{
+	color: deepskyblue;
+	text-align: center;
+}
+.b{
+	color: blueviolet;
+	text-align: center;
+}
+
+#buz{
+	color: darkred;
+	text-align: center;
+}

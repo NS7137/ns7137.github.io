@@ -1,0 +1,158 @@
+# HTML的简单介绍
+- 由一个个标签作为标记组织成的语言，每个标签都是一个DOM(document object model 文档对象模型)
+```html
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>
+			HELLO!
+		</title>
+	</head>
+	<body>
+		Hello, World!
+	</body>
+</html>
+
+```
+
+- 可以看到基本语法，是一颗树，以root <html></html> 限定整个文本的范围，2颗子树<head></head>与<body></body>
+	- head 标签中定义窗口的title，还可放入<style>更改标签的css样式
+	- body 标签中为主要整体的显示内容
+
+## headings
+- heading标签 标题大小
+```html
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>
+			HELLO!
+		</title>
+	</head>
+	<body>
+		<h1>This is a heading</h1>
+		<h2>This is a smaller heading</h2>
+		<h3>This is a heading</h3>
+		<h4>This is a heading</h4>
+		<h5>This is a heading</h5>
+		<h6>This is the smallest heading</h6>
+	</body>
+</html>
+```
+
+## [Lists](./lecture1/lists.html)
+- ul 为无序，ol 为有序
+
+## [Image](./lecture1/image.html)
+- 通过img 标签插入图片,alt属性设置别名,width属性设置大小
+
+## [a标签](./lecture1/link.html)
+- a标签设置链接，重定向
+
+## [table标签](./lecture1/table.html)
+- table标签定义表格
+	- thead,tbody 区分表头和表体
+	- tr,td : row与data 定义每行对应表头的数据
+	- 样式里可以通过定义属性
+		- border: 1px solid black; 表格框粗细颜色
+		- border-collapse: collapse; 框合并
+		- width: 60%; 占屏幕大小
+		- margin: auto; 通过定义外边距居中
+
+## [form标签](./lecture1/form.html)
+- 用于提交表单数据，之后结合action，methods属性，将表单信息提交到指定的servlet处理并重定向或转发到展示页面
+
+# CSS
+- 通过style标签或属性指定的html标签内容样式更改
+
+## [style](./lecture1/style.html)
+- 标签中可以定义style属性，更改其标签中内容的样式
+- 同样可以将style属性的内容保存到css文件中，通过link标签加载样式
+- 相同标签不同样式，可以通过class，id加以区分
+	- 优先级 inline定义最高，其次id，class，type
+	- 选择器的语法最简单的就是 #id .class p 单项选择
+
+## [div](./lecture1/size.html)
+- 通过div标签定义width，height属性分区分块
+- 设置float属性可以使两个div并排显示
+
+## [font](./lecture1/font.html)
+- 定义字体
+
+## css选择器简单语法
+- a,b 表示与的关系	multiple element selector
+- a b 表示包含，a标签中的b标签	descendant selector
+- a>b 表示父标签是a的b标签	child selector
+- a+b 表示紧跟a标签后的第一个b标签		adjacent sibling selector
+- [a=b] 表示a属性为b的标签	attribute selector
+- a:b 表示a标签处于b的状态时	pseudoclass selector
+	- :link 未被访问过的链接，与:visied互斥
+	- :hover 鼠标指针悬停于其上的元素
+	- :active 被激活的元素，如被点击的链接，被按下的按钮
+	- :visited 已经被访问过的链接
+	- :focus 键盘输入焦点的元素
+	- :first-child 元素在页面中第一次出现的时候
+	- :lang 元素带有指定lang的情况
+- a::b 表示a标签的b元素	pseudoelement selector
+	- ::first-letter 元素文本的第一个字母
+	- ::first-line 元素文本的第一行
+	- ::before 在元素内容的最前面添加新内容
+	- ::after 在元素内容的最后面添加新内容
+- [descendant](./lecture1/descendant.html) [attribute](./lecture1/attribute.html) [hover](./lecture1/hover.html)
+
+# 响应式设计
+- 更加不同的显示尺寸变换显示的样式
+
+- 头标签中定义 
+
+  - <meta name="viewport"   content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  - viewport标记，用于指定用户是否可以缩放Web页面，并对相关的选项进行设定。
+  - width 和height 指令分别指定视区的逻辑宽度和高度。它们的值可以是以像素为单位的数字，也可以是一个特殊的标记符号。如上文代码中device-width即表示，视区宽度应为设备的屏幕宽度。类似的，device-height即表示设备的屏幕高度。
+  - initial-scale用于设置Web页面的初始缩放比例。默认的初始缩放比例值因智能手机浏览器的不同而有所差异，通常情况下，设备会在浏览器中呈现出整个Web页面。设为1.0则显示未经缩放的Web页面。
+  - maximum-scale和minimum-scale用于设置用户对于Web页面缩放比例的限制。值的范围为0.25~10.0之间
+  - user-scalable指定用户是否可以缩放视区，即缩放Web页面的视图。值为yes时允许用户进行缩放，值为no时不允许缩放。
+
+## Media Queries
+- Media Types: print,screen...
+- Media Features: height,width,orientation...
+- 根据浏览器大小决定显示的样式[@media](./lecture1/responsive.html)
+	- @media() 括号中定义范围
+
+## Flexbox
+- 会根据当前浏览器大小改变显示方式 [flexbox](./lecture1/flexbox.html)
+	- display: flex;	指定了弹性容器中子元素的排列方式
+	- flex-wrap: wrap;	设置弹性盒子的子元素超出父容器时是否换行。
+	- flex-direction: row|row-reverse|column|column-reverse;	指定了弹性容器中子元素的排列方式
+		- justify-content: flex-start|flex-end|center|space-between|space-around;	设置弹性盒子元素在主轴（横轴）方向上的对齐方式。
+		- align-items: stretch|center|flex-start|flex-end|baseline;	设置弹性盒子元素在侧轴（纵轴）方向上的对齐方式。
+		- align-content: stretch|center|flex-start|flex-end|space-between|space-around;	修改 flex-wrap 属性的行为，类似 align-items, 但不是设置子元素对齐，而是设置行对齐
+		- flex-flow 属性是 flex-direction 和 flex-wrap 属性的复合属性。
+		- order: number 设置弹性盒子的子元素排列顺序。
+		- align-self: auto|stretch|center|flex-start|flex-end|baseline	在弹性子元素上使用。覆盖容器的 align-items 属性。
+		- flex: flex-grow flex-shrink flex-basis|auto; 	设置弹性盒子的子元素如何分配空间
+- 可以参考: [Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+
+## [Grid](./lecture1/grid.html)
+- display: grid;	定义网格
+- grid-column-gap: 20px; grid-row-gap: 10px;	行列间距
+- grid-template-columns: 200px 200px auto;	每一格的大小,auto为随浏览器大小变化，也可以使用%来定义百分比大小。还有repeat(2,33%),重复模式
+	- fr关键字 fraction片段
+		- grid-template-columns: 50px 3fr 1fr 2fr;表示后者是前者的几倍
+- 可以参考: [Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
+
+## [getbootstrap](www.getbootstrap.com)
+- 使用getbootstrap提供的样式定义
+- 它将页面分成12列 [hello](./lecture1/hello.html)
+- 定义col-lg-3大屏中每个div为3列 col-sm-6小屏中每个div为6列，因此大小切换时会换行
+
+## scss
+- 通过编译scss来生成css文件
+- scss文件中可以定义通用属性，通过相同属性来定义样式 [$variable](./lecture1/variables.html)
+- 编译命令 sass variables.scss:variables.css 或 监听scss状态 sass --watch variables.scss:variables.css
+	- 会生成.css文件和.map关联文件
+	- 在html中link标签中仍使用.css文件
+- scss中定义包含关系[nesting](./lecture1/nesting.html) 只需要通过{}来包含内层就可以定义
+- scss中定义继承关系[inheritance](./lecture1/inheritance.html)
+	- 通过 %variable 定义样式
+	- 通过 extend %variable 来继承即可重复使用
