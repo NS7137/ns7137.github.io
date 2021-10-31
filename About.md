@@ -1,4 +1,7 @@
-# Some Web Study Info
+---
+layout: default
+title: Some Web Study Info
+---
 <ul>
   {% for post in site.posts %}
     <li>
