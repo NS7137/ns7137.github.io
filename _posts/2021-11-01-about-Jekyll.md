@@ -294,10 +294,7 @@ Transform plain text into static websites and blogs
 		</li>
 	{% endfor %}
 	</ol>
-	```
-
-
-
+	
 	<h2>Recently Posts</h2>
 	
 	<ul>
