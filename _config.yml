@@ -1,6 +1,5 @@
 title: ns7137 Blog
-iconURL: assets/default-icon.png
-theme: green
+iconURL: assets/flash-icon.png
 
 # for a clean URL
 permalink: :slug
