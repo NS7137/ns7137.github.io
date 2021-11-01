@@ -2,6 +2,7 @@
 layout: post
 title: Jekyll Tutorial Notes
 description: 一些简单的目录层级视图
+date: 2021-11-01
 ---
 
 # in the beginning

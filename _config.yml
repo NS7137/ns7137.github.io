@@ -1,31 +1,18 @@
-title: "Pinkingrey"
-description: "Nothing to do, but just do it."
-author:
-  name: "ns7137"
-  email: "sunqiwei@gmail.com"
-  url: "ns7137.github.io"
-
-baseurl: /
-
-source: .
-destination: ./_site
-permalink: /:title
-paginate: 3
-paginate_path: /page/:num/
-
-defaults:
-  -
-    scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-
-future: true
+title: Pinkingrey
+email: sunqiwei@gmail.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Nothing to do, but just do it.
+# baseurl: "/" # the subpath of your site, e.g. /blog
+# url: "http://ejjoo.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+github_username: ns7137
+highlighter: rouge
+svg:
+  optimize: true
+# Build settings
+# theme: minima
+highlighter-theme: monokai
+date_format: "%Y-%M-%D"
 plugins:
-  - jekyll-seo-tag
-  - jekyll-paginate
-  - jekyll-sitemap
-  
-owner: ns7137
-year: 2021
+  - jekyll-feed
+category_dir: category/
+tag_dir: tag/
