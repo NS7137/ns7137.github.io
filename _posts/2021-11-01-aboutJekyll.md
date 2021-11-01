@@ -1,8 +1,6 @@
 ---
 layout: post
 title: Jekyll Tutorial Notes
-description: 一些简单的目录层级视图
-date: 2021-11-01
 ---
 
 # in the beginning
@@ -536,9 +534,3 @@ layout: default
     {% endfor %}
 </ul>
 ```
-
-# 小结
-- Jekyll除了html定义页面也可以使用liquid定义页面，和html类似
-- 在Jekyll中定义目录层级时，可以使用categories, type, folder属性信息，都表示是目录
-- 为了展示时分清层级，在每个子目录下都建一个index视图文件，展示本层的pages信息
-- 灵活运用if else和for loop，加 include  来展示自己视图 ，当然加点css是理所应当的
