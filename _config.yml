@@ -1,7 +1,6 @@
 title: Pinkingrey
 email: sunqiwei@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Nothing to do, but just do it.
+description: Nothing to do, but just do it.
 # baseurl: "/" # the subpath of your site, e.g. /blog
 # url: "http://ejjoo.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: ns7137
