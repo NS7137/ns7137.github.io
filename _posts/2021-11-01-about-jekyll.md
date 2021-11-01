@@ -1,4 +1,13 @@
+---
+layout: post
+title: jekyll tutorial notes
+description: 一些简单的目录层级视图
+---
+
+
+
 # in the beginning
+
 It's a note took after watching the video thomasjbradley's Jekyll tutorial
 
 # about jekyll
