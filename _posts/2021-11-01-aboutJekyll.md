@@ -44,11 +44,11 @@ Transform plain text into static websites and blogs
 
 # 配置jekyll
 - yml文件_config.yml
-	```yml
-	markdown: redcarpet # md解析器 或者其他 kramdown
-	baseurl: /[repository name] # 一般为 /仓库名
-	exclude: ['README.md'] # 不包含哪些文件或文件夹
-	```
+```yaml
+markdown: redcarpet # md解析器 或者其他 kramdown
+baseurl: /[repository name] # 一般为 /仓库名
+exclude: ['README.md'] # 不包含哪些文件或文件夹
+```
 
 # 启动和停止
 - 在仓库主目录文件夹下通过terminal启动
@@ -318,19 +318,19 @@ Transform plain text into static websites and blogs
 - 另一种使用yml方式替代md文件展示并按编辑顺序遍历。
 - 在根目录建_data 文件目录，建一个对应posts目录的yml文件，比如planet-types.yml。实际上是用data中yml的文件来代替md文件，所以对应的posts目录内容就重复了，可以删除
 - 然后进行配置yml文件，既把md中的内容，按照你需要展示的循序照搬到yml中，格式如下
-	```yml
-	- title: Dwarf
-	  folder: dwarf
-	  content: 'A **dwarf planet** is a planetary-mass object that is neither a planet nor a satelite.'
+```yaml
+- title: Dwarf
+  folder: dwarf
+  content: 'A **dwarf planet** is a planetary-mass object that is neither a planet nor a satelite.'
 
-  	- title: Terrestrial
-  	  folder: terrestrial
-  	  content: 'A **terrestrial planet**, **telluric planet** or **rocky planet** is a planet that is comprosed primarily of silicate rocks or metals' 
+- title: Terrestrial
+  folder: terrestrial
+  content: 'A **terrestrial planet**, **telluric planet** or **rocky planet** is a planet that is comprosed primarily of silicate rocks or metals' 
 
-  	- title: Gas Giant
-  	  folder: gas-giant
-  	  content: 'A **gas giant** is a large planet that is not primarily composed of rock or other solid matter.' 
-	```
+- title: Gas Giant
+  folder: gas-giant
+  content: 'A **gas giant** is a large planet that is not primarily composed of rock or other solid matter.' 
+```
 - 在展示页面遍历的时候需要定义以markdownify方式展示
 	```html
 	---
