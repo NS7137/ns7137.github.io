@@ -1,11 +1,10 @@
 ---
 layout: page
 title: About
-permalink: /about/
 ---
 
 # Welcome
-第一次使用Github Pages,套用的 Theme Monos 的模板。等之后研究下，再自己弄个简单的试一下。
+第一次使用Github Pages,套用的模板。等之后研究下，再自己弄个简单的试一下。
 
 # About this site
 记录一些三天打鱼两天晒网的初级东西，希望可以持之以恒。
@@ -15,4 +14,6 @@ permalink: /about/
 - Stay at home, free minds, time slows, love remains.
 
 # Theme
-[Theme Monos](http://jekyllthemes.org/themes/monos/)
+Hey! This is the "Leaf" Jekyll theme created by <a rel="me" target="_blank" href="https://twitter.com/_SupunKavinda">Supun Kavinda</a>.
+
+You can find the source code of this theme at <a href="https://github.com/SupunKavinda/jekyll-theme-leaf">Github</a>

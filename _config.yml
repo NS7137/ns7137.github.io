@@ -1,17 +1,17 @@
-title: Pinkingrey
-email: sunqiwei@gmail.com
-description: Nothing to do, but just do it.
-# baseurl: "/" # the subpath of your site, e.g. /blog
-# url: "http://ejjoo.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-github_username: ns7137
-highlighter: rouge
-svg:
-  optimize: true
-# Build settings
-# theme: minima
-highlighter-theme: monokai
-date_format: "%Y-%M-%D"
+title: ns7137 Blog
+iconURL: assets/default-icon.png
+theme: jekyll-theme-leaf
+
+# for a clean URL
+permalink: :slug
+
+social:
+  github: ns7137
+
 plugins:
-  - jekyll-feed
-category_dir: category/
-tag_dir: tag/
+ - jekyll-feed
+ - jekyll-seo-tag
+
+### comments & analytics
+hyvor_talk_website_id: 14
+google_analytics: UA-NNNNNNNN-N
