@@ -1,6 +1,6 @@
 ---
 layout: post
-title: jekyll tutorial notes
+title: Jekyll Tutorial Notes
 description: 一些简单的目录层级视图
 ---
 
