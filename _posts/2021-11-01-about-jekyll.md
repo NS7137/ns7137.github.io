@@ -93,7 +93,7 @@ Transform plain text into static websites and blogs
 	<h1>News</h1>
 	```
 - 在default页中需要添加上链接，以下是对default.html的更新，就是加a标签把所有需要跳转的页面都加到主页
-- 但是添加时考虑到上传github后非本地访问，需要添加site的根目录路径，即在yml中配置的baseurl，访问的方法为 {{site.baseurl}}既可
+- 但是添加时考虑到上传github后非本地访问，需要添加site的根目录路径，即在yml中配置的baseurl，访问的方法为 site.baseurl 既可
 	```html
 	<<!DOCTYPE html>
 	<html lang="en">
@@ -168,7 +168,7 @@ Transform plain text into static websites and blogs
 	```
 
 # include parameters
-- 通过{% include %} 来传递信息，可以在其中添加属性来传值
+- 通过 include  来传递信息，可以在其中添加属性来传值
 	```html
 	<header>
 		<h1>Jekyllsome</h1>
@@ -413,7 +413,7 @@ Transform plain text into static websites and blogs
 		{% endfor %}
 	</ul>
 	```
-- 在使用时在包含页面使用{% include %} 命令导入，同样在用到判断时，对属性进行赋值
+- 在使用时在包含页面使用 include  命令导入，同样在用到判断时，对属性进行赋值
 	```html
 	---
 	layout: default
@@ -533,4 +533,4 @@ Transform plain text into static websites and blogs
 - Jekyll除了html定义页面也可以使用liquid定义页面，和html类似
 - 在Jekyll中定义目录层级时，可以使用categories, type, folder属性信息，都表示是目录
 - 为了展示时分清层级，在每个子目录下都建一个index视图文件，展示本层的pages信息
-- 灵活运用if else和for loop，加{% include %} 来展示自己视图 ，当然加点css是理所应当的
+- 灵活运用if else和for loop，加 include  来展示自己视图 ，当然加点css是理所应当的
