@@ -1,7 +1,6 @@
 ---
 layout: page
 title: About
-permalink: /about/
 ---
 
 # Welcome
@@ -13,6 +12,7 @@ permalink: /about/
 # Murmur
 - Stay hungry stay foolish! 虚心若愚,求知若饥
 - Stay at home, free minds, time slows, love remains.
+- 万寿无疆之谓老，顶天立地之谓头，父母君王又谓天之子。
 
 # Theme
 Hey! This is the "Leaf" Jekyll theme created by <a rel="me" target="_blank" href="https://twitter.com/_SupunKavinda">Supun Kavinda</a>.
