@@ -256,7 +256,7 @@ python manage.py runserver
 - 当模板中视图文件加载css文件时，使用相应的表达式，使得服务器能找到static中样式的准确位置
 
 ```html
-{% load static %}
+<!-- {% load static %} -->
 
 <!DOCTYPE html>
 <html lang="en">
