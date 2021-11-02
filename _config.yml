@@ -7,9 +7,9 @@ permalink: :slug
 social:
   github: ns7137
 
-# plugins:
-#  - jekyll-feed
-#  - jekyll-seo-tag
+plugins:
+ - jekyll-feed
+ - jekyll-seo-tag
 
 ### comments & analytics
 # hyvor_talk_website_id: 14
