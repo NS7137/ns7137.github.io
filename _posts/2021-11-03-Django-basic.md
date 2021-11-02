@@ -15,13 +15,13 @@ django-admin startproject lecture4
 
 ```markdown
 lecture4
-	lecture4
-		- __init__.py 	# 一个空文件，告诉 Python 这个目录应该被认为是一个 Python 包
-		- settings.py 	# 项目配置
-		- urls.py 		# 总路由
-		- wsgi.py 		# 网关接口,作为项目运行在 WSGI 兼容的Web服务器上的入口
-		- asgi.py 		# 与ASGI兼容的web服务器为您的项目提供服务的入口
-	manage.py 			# django交互所有命名
+-lecture4
+	- __init__.py 	# 一个空文件，告诉 Python 这个目录应该被认为是一个 Python 包
+	- settings.py 	# 项目配置
+	- urls.py 	# 总路由
+	- wsgi.py 	# 网关接口,作为项目运行在 WSGI 兼容的Web服务器上的入口
+	- asgi.py 	# 与ASGI兼容的web服务器为您的项目提供服务的入口
+manage.py 		# django交互所有命名
 ```
 
 - 本地启动server
@@ -31,6 +31,7 @@ python manage.py runserver  #http://127.0.0.1:8000/		默认页面
 ```
 
 # Create an App
+
 - 通过manage.py来自动生成app目录
 
 ```bash
@@ -45,7 +46,7 @@ hello
 	- __init__.py
 	- admin.py 		# 管理工具
 	- apps.py 		# 应用的配置
-	- models.py 	# 数据模型
+	- models.py 		# 数据模型
 	- tests.py 		# 编写测试文档
 	- views.py 		# 用户保存响应各种请求的函数或者类的视图文件
 lecture4
@@ -246,7 +247,7 @@ def index(request):
 ```bash
 python manage.py runserver
 
-#浏览器newyear的视图本地地址 http://127.0.0.1:8000/newyear/
+# 浏览器newyear的视图本地地址 http://127.0.0.1:8000/newyear/
 ````
 
 # static目录
