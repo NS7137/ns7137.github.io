@@ -59,7 +59,7 @@ manage.py
 - 再看setting文件，默认的INSTALLED_APPS的配置
 - 将新建的hello，加入其中，使其生效
 
-```py
+```python
 # Application definition
 
 INSTALLED_APPS = [
@@ -77,7 +77,7 @@ INSTALLED_APPS = [
 
 - 用于保存响应各种请求的函数或者类
 
-```py
+```python
 from django.shortcuts import render
 from django.http import HttpResponse
 
@@ -92,7 +92,7 @@ def index(request):
 - 在views中定义了函数，需要在某个视图中展示，先要定义它的目录路径
 - 在hello目录中新建一个app自己的urls.py
 
-```py
+```python
 from django.urls import path
 # 从当前模块引入views
 from . import views
@@ -105,7 +105,7 @@ urlpatterns = [
 
 - 回到项目目录的urls.py
 
-```py
+```python
 from django.contrib import admin
 from django.urls import path,include
 
@@ -122,7 +122,7 @@ urlpatterns = [
 
 - 遇到有传参的函数，可以通过path的第一个属性传参
 
-```py
+```python
 from django.shortcuts import render
 from django.http import HttpResponse
 
@@ -131,7 +131,7 @@ def greet(request, name):
 	return HttpResponse(f"Hello, {name.capitalize()}")
 ```
 
-```py
+```python
 from django.urls import path
 from . import views
 
@@ -146,7 +146,7 @@ urlpatterns = [
 
 - 渲染页面可以通过模板渲染，将模板放在templates目录中
 
-```py
+```python
 from django.shortcuts import render
 from django.http import HttpResponse
 
@@ -178,7 +178,7 @@ templates
 
 - 当需要通过render向模板传属性值时，属性值以 dict 形式传递
 
-```py
+```python
 from django.shortcuts import render
 from django.http import HttpResponse
 
@@ -214,7 +214,7 @@ def greet(request, name):
 	- 参数3 视图在templates中的传递变量
 5. 再者在view.py中定义视图所需的函数，返回值可以直接通过HttpReponse()响应，但一般通过渲染视图到模板的方式
 
-```py
+```python
 import datetime
 
 from django.shortcuts import render
@@ -248,7 +248,7 @@ def index(request):
 python manage.py runserver
 
 # 浏览器newyear的视图本地地址 http://127.0.0.1:8000/newyear/
-````
+```
 
 # static目录
 
@@ -278,7 +278,7 @@ python manage.py runserver
 
 - 在视图view.py定义函数时，需要向模板传递多个参数时，可以使用list，tuple，set，dict，或者类多种形式将数据封装后，或经过逻辑处理后，再向视图层传递
 
-```py
+```python
 from django.shortcuts import render
 
 tasks = ["foo","bar","baz"]
@@ -309,7 +309,7 @@ def index(request):
 - 视图层定义了一个表单，填写数据后将数据提交并在另一个视图展示
 - 在view.py中定义了这样的视图函数，当然不要忘记添加urlpatterns的操作
 
-```py
+```python
 from django.shortcuts import render
 
 def add(request):
@@ -391,7 +391,7 @@ def add(request):
 - 这里的"form"属性对应的就是NewTaskForm这个类，类中定义了一个标签为New Task的CharField用于接收数据，存入名为task的变量中。
 - 这样改的好处就是当想要改变视图表单想要以哪种方式接收数据时，就不同更改页面代码，而且依然可以在py文件中检查输入数据的有效性
 
-```py
+```python
 from django import forms
 from django.shortcuts import render
 
@@ -427,7 +427,7 @@ def add(request):
 
 - 接收数据区别对待get与post
 
-```py
+```python
 from django import forms
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
@@ -462,7 +462,7 @@ def add(request):
 - 所以需要更改其生命周期，以及限定权限，一般以一次session会话为存储期限与id来区分使用对象，来实现数据不共享以及存储期限
 - 在首次访问页面时生成其sessionId
 
-```py
+```python
 
 class NewTaskForm(forms.Form):
 	task = forms.CharField(lable="New Task")
