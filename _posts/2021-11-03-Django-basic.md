@@ -254,7 +254,7 @@ python manage.py runserver
 # 添加static目录
 
 - 为页面添加样式css的文件放在项目目录下static中对应app的目录下static/newyear/style.css
-- 当模板中视图文件加载css文件时，使用相应的"load static"表达式，使得服务器能找到static中样式的准确位置
+- 当模板中视图文件加载css文件时，使用相应的加载静态文件表达式，使得服务器能找到static中样式的准确位置
 
 ```html
 <!DOCTYPE html>
