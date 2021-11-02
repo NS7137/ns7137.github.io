@@ -233,11 +233,11 @@ def index(request):
 		<title>Is it New Year?</title>
 	</head>
 	<body>
-		{% if newyear %}
+<!-- 		{% if newyear %} -->
 			<h1>YES</h1>
-		{% else %}
+<!-- 		{% else %} -->
 			<h1>NO</h1>
-		{% endif %}
+<!-- 		{% endif %} -->
 	</body>
 </html>
 ```
@@ -265,11 +265,11 @@ python manage.py runserver
 		<link rel="stylesheet" href="{% static 'newyear/style.css' %}">
 	</head>
 	<body>
-		{% if newyear %}
+<!-- 		{% if newyear %} -->
 			<h1>YES</h1>
-		{% else %}
+<!-- 		{% else %} -->
 			<h1>NO</h1>
-		{% endif %}
+<!-- 		{% endif %} -->
 	</body>
 </html>
 ```
@@ -296,9 +296,9 @@ def index(request):
 	</head>
 	<body>
 		<ul>
-			{% for task in tasks %}
-				<li>{{ task }}</li>
-			{% endfor %}
+<!-- 			{% for task in tasks %} -->
+<!-- 				<li>{{ task }}</li> -->
+<!-- 			{% endfor %} -->
 		</ul>
 	</body>
 </html>
@@ -343,8 +343,8 @@ def add(request):
 		<title>Tasks</title>
 	</head>
 	<body>
-		{% block body %}
-		{% endblock %}
+<!-- 		{% block body %} -->
+<!-- 		{% endblock %} -->
 	</body>
 </html>
 ```
@@ -353,19 +353,19 @@ def add(request):
 - 如果从tasks的index视图链接到add视图，这里就用到了urlpatterns中的name属性，这样就不需要在更改urlpatterns中path后再来修改视图层的链接了，表达式会直接通过urlpatterns来找对应name属性的path
 
 ```html
-{% extends "tasks/layout.html" %}
+<!-- {% extends "tasks/layout.html" %} -->
 
-{% block body %}
+<!-- {% block body %} -->
 	<h1>Tasks</h1>
 	<ul>
-		{% for task in tasks %}
-			<li>{{ task }}</li>
-		{% empty %}
+<!-- 		{% for task in tasks %} -->
+<!-- 			<li>{{ task }}</li> -->
+<!-- 		{% empty %} -->
 			<li>No tasks.</li>
-		{% endfor %}
+<!-- 		{% endfor %} -->
 	</ul>
-	<a href="{% url 'add' %}">Add a New Task</a>
-{% endblock %}
+<!-- 	<a href="{% url 'add' %}">Add a New Task</a> -->
+<!-- {% endblock %} -->
 ```
 
 - 同样的对add页面的操作，但当遇到name的属性值相同的时候，server就无法区分链接的是哪个具体的页面，所以就需要在app各自urls.py的定义时加上 app_name = "tasks" 的变量，在视图中用冒号表示其命名空间
@@ -373,17 +373,17 @@ def add(request):
 - 同时为了安全，需要加上csrf_token，可以在setting.py中查看到django配置了MIDDLEWARE
 
 ```html
-{% extends "tasks/layout.html" %}
+<!-- {% extends "tasks/layout.html" %} -->
 
-{% block body %}
+<!-- {% block body %} -->
 	<h1>Add Task</h1>
-	<form action="{% url 'tasks: add' %}" method="post">
-		{% csrf_token %}
+<!-- 	<form action="{% url 'tasks: add' %}" method="post"> -->
+<!-- 		{% csrf_token %} -->
 		<input type="text" name="task">
 		<input type="submit">
 	</form>
-	<a href="{% url 'tasks:index' %}">View Tasks</a>
-{% endblock %}
+<!-- 	<a href="{% url 'tasks:index' %}">View Tasks</a> -->
+<!-- {% endblock %} -->
 ```
 
 - 这里把接收到的name值以post形式，提交回add视图，让对应的add函数处理
@@ -412,17 +412,17 @@ def add(request):
 - add的视图可以更改为
 
 ```html
-{% extends "tasks/layout.html" %}
+<!-- {% extends "tasks/layout.html" %} -->
 
-{% block body %}
+<!-- {% block body %} -->
 	<h1>Add Task</h1>
-	<form action="{% url 'tasks: add' %}" method="post">
-		{% csrf_token %}
-		{{ form }}
+<!-- 	<form action="{% url 'tasks: add' %}" method="post"> -->
+<!-- 		{% csrf_token %} -->
+<!-- 		{{ form }} -->
 		<input type="submit">
 	</form>
-	<a href="{% url 'tasks:index' %}">View Tasks</a>
-{% endblock %}
+<!-- 	<a href="{% url 'tasks:index' %}">View Tasks</a> -->
+<!-- {% endblock %} -->
 ```
 
 - 接收数据区别对待get与post
