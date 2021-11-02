@@ -2,7 +2,7 @@
 layout: post
 title: lecture3. Python Program Basic
 author: ns7137
-description: notes for cs50-web
+description: cs50-web notes
 ---
 
 # Hello World
