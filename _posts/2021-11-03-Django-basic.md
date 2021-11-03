@@ -257,6 +257,8 @@ python manage.py runserver
 - 当模板中视图文件加载css文件时，使用相应的加载静态文件表达式，使得服务器能找到static中样式的准确位置
 
 ```html
+{% raw %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -271,6 +273,7 @@ python manage.py runserver
 		{% endif %}
 	</body>
 </html>
+{% endraw %}
 ```
 
 # 参数传递
@@ -295,9 +298,11 @@ def index(request):
 	</head>
 	<body>
 		<ul>
+			{% raw %}
 			{% for task in tasks %}
 				<li>{{ task }}</li>
 			{% endfor %}
+			{% endraw %}
 		</ul>
 	</body>
 </html>
@@ -342,8 +347,10 @@ def add(request):
 		<title>Tasks</title>
 	</head>
 	<body>
+	{%raw%}
 		{% block body %}
 		{% endblock %}
+	{%endraw%}
 	</body>
 </html>
 ```
@@ -352,6 +359,7 @@ def add(request):
 - 如果从tasks的index视图链接到add视图，这里就用到了urlpatterns中的name属性，这样就不需要在更改urlpatterns中path后再来修改视图层的链接了，表达式会直接通过urlpatterns来找对应name属性的path
 
 ```html
+{%raw%}
 {% extends "tasks/layout.html" %}
 
 {% block body %}
@@ -365,6 +373,7 @@ def add(request):
 	</ul>
 	<a href="{% url 'add' %}">Add a New Task</a>
 {% endblock %}
+{%endraw%}
 ```
 
 - 同样的对add页面的操作，但当遇到name的属性值相同的时候，server就无法区分链接的是哪个具体的页面，所以就需要在app各自urls.py的定义时加上 app_name = "tasks" 的变量，在视图中用冒号表示其命名空间
@@ -372,6 +381,7 @@ def add(request):
 - 同时为了安全，需要加上csrf_token，可以在setting.py中查看到django配置了MIDDLEWARE
 
 ```html
+{%raw%}
 {% extends "tasks/layout.html" %}
 
 {% block body %}
@@ -383,6 +393,7 @@ def add(request):
 	</form>
 	<a href="{% url 'tasks:index' %}">View Tasks</a>
 {% endblock %}
+{%endraw%}
 ```
 
 - 这里把接收到的name值以post形式，提交回add视图，让对应的add函数处理
@@ -411,6 +422,7 @@ def add(request):
 - add的视图可以更改为
 
 ```html
+{%raw%}
 {% extends "tasks/layout.html" %}
 
 {% block body %}
@@ -422,6 +434,7 @@ def add(request):
 	</form>
 	<a href="{% url 'tasks:index' %}">View Tasks</a>
 {% endblock %}
+{%endraw%}
 ```
 
 - 接收数据区别对待get与post
