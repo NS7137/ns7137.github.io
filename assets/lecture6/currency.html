@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Currency Exchange</title>
+		<script>
+			document.addEventListener('DOMContentLoaded',function(){
+
+				//获取form提交
+				document.querySelector('form').onsubmit = function() {
+					//从地址获取数据
+					fetch('https://api.exchangeratesapi.io/latest?base=USD')
+					//获取到response数据，将其转换为json数据返回
+					.then(response=>
+						return response.json())
+					.then(data=>{
+						//处理获取到的json数据
+						// console.log(data);
+						const currency = document.querySelector('#currency').value;
+						const rate = data.rates[currency];
+
+						//判断有效性
+						if(rate !== undefined){
+							document.querySelector('#result').innerHTML = `1 USD is equal to ${rate.toFixed(3)} ${currency}.`;
+						} else {
+							document.querySelector('#result').innerHTML = 'Invalid currency.'
+						}
+					})
+					.catch(error=>{
+						console.log('Error:', error);
+					});
+
+					//在本页面处理信息
+					return false;
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<form>
+			<input id="currency" placeholder="Currency" type="text" name="currency">
+			<input type="submit" name="Convert">
+		</form>
+		<div id="result">
+			
+		</div>
+	</body>
+</html>

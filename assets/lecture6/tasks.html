@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Tasks</title>
+		<script>
+			//获取到提交的内容，在console打印
+			document.addEventListener('DOMContentLoaded',()=>{
+
+				//By default, submit button is disabled
+				document.querySelector('#submit').disabled = true;
+				//输入后且值长度大于0，可用
+				document.querySelector('#task').onkeyup = ()=>{
+					if (document.querySelector('#task').value.length>0) {
+						document.querySelector('#submit').disabled = false;
+					} else {
+						document.querySelector('#submit').disabled = true;
+					}
+				}
+
+				document.querySelector('form').onsubmit = ()=>{
+					const task = document.querySelector('#task').value;
+					// console.log(task);
+
+					//向页面添加获取到的内容
+					const li = document.createElement('li');
+					li.innerHTML = task;
+					//将li标签插入到ul中
+					document.querySelector('#tasks').append(li);
+					//每次提交后清空
+					document.querySelector('#task').value = '';
+					//提交后submit不可用
+					document.querySelector('#submit').disabled = true;
+
+					//Stop form from submitting
+					return false;
+				}
+			});
+
+		</script>
+	</head>
+	<body>
+		<h1>Tasks</h1>
+		<ul id="tasks">
+		</ul>
+		<form>
+			<input id="task" placeholder="New Task" type="text" name="task">			
+			<input id="submit" type="submit">
+		</form>
+	</body>
+</html>

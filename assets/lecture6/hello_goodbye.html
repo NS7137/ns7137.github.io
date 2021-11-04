@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Hello</title>
+		<script>
+			//将Googbye!显示在h1标签中，代替Hello!
+			function hello() {
+				//const 常量
+				const heading = document.querySelector('h1');
+				//条件判断，使得值在2者中切换
+				if (heading.innerHTML === 'Hello!') {
+					heading.innerHTML = 'Googbye!';
+				} else {
+					heading.innerHTML = 'Hello!';
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<h1>Hello!</h1>
+		<button onclick="hello()">Click Here</button>
+	</body>
+</html>
