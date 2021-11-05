@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Counter</title>
+		<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+		<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+	</head>
+	<body>
+		<div id="app"></div>
+
+		<script type="text/babel">
+
+
+			function App(){
+				//hock 初始值，返回这个值，并要设置成什么值
+				const [count,setCount] = React.useState(0);
+
+				function updateCount(){
+					//使用useState的方法
+					setCount(count+1);
+				}
+
+				return (
+					<div>
+						<div>{count}</div>
+						<button onClick={updateCount}>Count</button>
+					</div>
+				);
+			}
+
+			ReactDOM.render(<App />, document.querySelector('#app'));
+		</script>
+	</body>
+</html>

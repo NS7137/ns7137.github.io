@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Single Page</title>
+		<style>
+			div {
+				display: none; /*将div隐藏*/
+			}
+		</style>
+		<script>
+			
+			function showPage(page) {
+
+				//每次只显示一个div，再显示先把所有都隐藏
+				document.querySelectorAll('div').forEach(div=>{
+					div.style.display = 'none';
+				});
+				//通过id定位div
+				document.querySelector(`#${page}`).style.display = 'block';
+			}
+
+			//将函数与button绑定
+			document.addEventListener('DOMContentLoaded',function(){
+				document.querySelectorAll('button').forEach(button=>{
+					//遍历每个button，当onclick事件触发，就调用方法，
+					//将当前button的dataset的page值作为showPage的参数
+					button.onclick = function(){
+						showPage(this.dataset.page)
+					}
+				});
+			});
+
+		</script>
+	</head>
+	<body>
+	<!-- 用dataset存储每个button对应的div id -->
+		<button data-page="page1">Page 1</button>
+		<button data-page="page2">Page 2</button>
+		<button data-page="page3">Page 3</button>
+		<div id="page1">
+			<h1>This is page 1.</h1>
+		</div>
+		<div id="page2">
+			<h1>This is page 2.</h1>
+		</div>
+		<div id="page3">
+			<h1>This is page 3.</h1>
+		</div>
+	</body>
+</html>

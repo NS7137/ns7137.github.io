@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Animate</title>
+		<style>
+			
+			@keyframes grow {
+				from {
+					font-size: 20px;
+				}
+
+				to {
+					font-size: 100px;
+				}
+			}
+
+			@keyframes mvoe {
+				from {
+					left: 0%;
+				}
+
+				to {
+					left: 50%;
+				}
+			}
+
+			@keyframes mvoeback {
+				0% {
+					left: 0%;
+				}
+
+				50% {
+					left: 50%;
+				}
+
+				100% {
+					left: 0%;
+				}
+			}
+
+			h1 {
+				position: relative; /*关联位置 使用位置百分比*/
+				animation-name: moveback; /*选择名为xx的效果*/
+				animation-duration: 2s;
+				animation-fill-mode: forwards;
+				animation-iteration-count: infinite; /*设置次数或infinite*/
+			}
+		</style>
+		<script>
+			document.addEventListener('DOMContentLoaded',function(){
+				const h1 = document.querySelector('h1');
+				h1.style.animationPlayState = 'paused';
+
+				document.querySelector('button').onclick = ()=> {
+					if (h1.style.animationPlayState === 'paused') {
+						h1.style.animationPlayState = 'running';
+					} else {
+						h1.style.animationPlayState = 'paused';
+					}
+				}
+			})
+		</script>
+	</head>
+	<body>
+		<button>Click Here!</button>
+		<h1>Welcome!</h1>
+	</body>
+</html>

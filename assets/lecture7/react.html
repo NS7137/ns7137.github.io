@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>React</title>
+		<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+		<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+	</head>
+	<body>
+		<div id="app"></div>
+
+		<script type="text/babel">
+			/*方法重用，且带参数*/
+			function Hello(props){
+				return(
+					<h1>Hello,{props.name}!</h1>
+				);
+			}
+
+			function App(){
+				return (
+					/*传参*/
+					<div>
+						<Hello name="Harry"/>
+						<Hello name="Ron"/>
+						<Hello name="Hermione"/>
+					</div>
+				);
+			}
+
+			ReactDOM.render(<App />, document.querySelector('#app'));
+		</script>
+	</body>
+</html>
