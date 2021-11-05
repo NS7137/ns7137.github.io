@@ -285,7 +285,7 @@ for i in range(25):
 - step 每个job由多个step构成
 - action 每个step可以依次执行一个或多个命令
 	- actions/setup-node@74bc508 # 指向一个 commit
- 	- actions/setup-node@v1.0    # 指向一个标签
+	- actions/setup-node@v1.0    # 指向一个标签
 	- actions/setup-node@master  # 指向一个分支
 
 ## workflow 文件
