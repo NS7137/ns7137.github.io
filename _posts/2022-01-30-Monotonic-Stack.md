@@ -7,6 +7,8 @@ description: 单调栈实现 next greater element, 搬运自labuladong
 
 # 单调栈模板
 
+- 数据入栈之前与栈内元素比较大小，栈内元素值只会单调增或单调减
+
 ## Next Greater Number
 
 ```c++
